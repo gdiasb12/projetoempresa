@@ -44,7 +44,7 @@
                         </tbody>
                     </table>
                     @else
-                    <h2>Nenhum usuário cadastrado.</h2>
+                    <h2>Nenhuma empresa cadastrada.</h2>
                     @endif
 
                 </div>

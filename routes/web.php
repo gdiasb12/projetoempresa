@@ -44,10 +44,3 @@ Route::group(['prefix' => 'empresa'], function () {
 Route::get('entrar', 'HomeController@logar');
 Route::post('entrar', 'HomeController@authentication');
 Route::get('sair', 'HomeController@logout');
-
-// Verifica se o usuário está logado
-// Route::group(array('before' => 'auth'), function()
-// {
-//     // Rota de artigos
-// 	Route::controller('artigos', 'ArtigosController');
-// })
