@@ -18,10 +18,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="nivel" class="col-md-4 control-label">Nivel</label>
+                            <label for="tipo" class="col-md-4 control-label">Tipo (Nivel)</label>
                             <div class="col-md-6">
-                                <input type="radio" name="nivel" value="admin"> Administrador<br>
-                                <input type="radio" name="nivel" value="cliente"> Cliente<br>
+                                <input type="radio" name="tipo" value="admin"> Administrador<br>
+                                <input type="radio" name="tipo" value="cliente"> Cliente<br>
                             </div>
                         </div>
                         <div class="form-group">
@@ -47,10 +47,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirmar Senha</label>
+                            <label for="confirma-senha" class="col-md-4 control-label">Confirmar Senha</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <input id="confirma-senha" type="password" class="form-control" name="password_confirmation">
                             </div>
                         </div>
 

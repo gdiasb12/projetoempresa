@@ -10,5 +10,5 @@ return [
     | Texto que retorna quando dar um erro na validação do Cnpj
     |
     */
-    'message' => 'Cnpj inválido'
+    'message' => 'Ops, CNPJ inválido!'
 ];

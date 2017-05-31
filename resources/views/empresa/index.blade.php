@@ -19,7 +19,7 @@
                             <tr>
                                 <th>Nome Fantasia</th>
                                 <th>Razão Social</th>
-                                <th>CNPJ</th>
+                                <th>Usuário</th>
                                 <th width="25%">Ações</th>
                             </tr>
                         </thead>
@@ -28,7 +28,7 @@
                             <tr>
                                 <td>{{ $empresa->nome_fantasia }}</td>
                                 <td>{{ $empresa->razao_social }}</td>
-                                <td>{{ $empresa->cnpj }}</td>
+                                <td>{{ $empresa->usuario()->first()->nome }}</td>
                                 <td>
                                     <div class="btn-block">
                                         <a href="{{ url('/empresa/carregar', $empresa->id) }}" class="btn btn-primary btn-xs"></span>

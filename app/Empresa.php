@@ -15,7 +15,8 @@ class Empresa extends Model {
 	 */
 	protected $table = 'empresa';
 	public $timestamps = false;
-	// public function usuario(){
-	// 	return $this->belongsTo('\App\Usuario', 'usuario_id');
-	// }
+
+	public function usuario(){
+		return $this->belongsTo('\App\Usuario', 'usuario_id');
+	}
 }

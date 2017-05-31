@@ -9,19 +9,32 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\Input;
 use Auth;
+use \App\Usuario;
 
 class HomeController extends BaseController {
 
+    //call the main page
     public function index()
     {
-        return view('welcome');
+        //check the authentication
+        if( Auth::check() ) {
+            return view('welcome');
+        } else {
+            return view('logar');
+        }
     }
 
-    public function logar()
-    {
-        return view('logar');
+    //call the login page
+    public function logar(){
+        //check the authentication
+        if( Auth::check() ) {
+            return redirect('/');
+        } else {
+            return view('logar');
+        }
     }
 
+    //Make authentication of the user
     public function authentication()
     {
         // option to remmember the user
@@ -30,26 +43,32 @@ class HomeController extends BaseController {
         {
             $remember = true;
         }
-        
-        // authentication
-        if (Auth::attempt(array(
-            'email' => Input::get('email'), 
-            'password' => Input::get('senha')
-            ), $remember))
-        {
-            return \Redirect::to('usuario');
-        }
-        else
-        {
-            return \Redirect::to('entrar')
-                ->with('flash_error', 1)
-                ->withInput();
+
+        //Get the user requested by email to authenticate
+        $usuario = Usuario::where('email', Input::get('email'))->first();
+
+        //Verify the passwords 
+        if(password_verify(Input::get('password'), $usuario->senha)){
+            //make the user login 
+            Auth::login($usuario, $remember);
+            //Save in the current session infos about the user logged
+            session(['user_info' =>  $usuario]);
+            //redirect to the main page
+            return redirect('/');
+        }else{
+            //In errors case show a message about that
+            return redirect('entrar')
+            ->withErrors(['errors' => 'Senha incorreta!'])
+            ->withInput();
         }
     }
-    
+
+    //Logout 
     public function logout()
     {
+        //Just make the logout 
         Auth::logout();
-        return Redirect::to('/');
+        //redirect to the main page
+        return redirect('/');
     }
 }

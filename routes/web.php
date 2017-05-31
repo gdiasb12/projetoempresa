@@ -39,8 +39,10 @@ Route::group(['prefix' => 'empresa'], function () {
 	Route::post('/alterar/{id}', 'EmpresaController@alterar');
 	Route::get('/remover/{id}', 'EmpresaController@remover');
 	Route::get('/getcep/{cep}', 'EmpresaController@getCep');
+	Route::get('/validacnpj/{cnpj}', 'EmpresaController@validaCnpj');
+	Route::post('/verificarcnpj/{cnpj}', 'EmpresaController@verificarCnpj');
 });
 
 Route::get('entrar', 'HomeController@logar');
 Route::post('entrar', 'HomeController@authentication');
-Route::get('sair', 'HomeController@logout');
+Route::post('sair', 'HomeController@logout');

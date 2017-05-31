@@ -18,10 +18,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="nivel" class="col-md-4 control-label">Nivel</label>
+                            <label for="tipo" class="col-md-4 control-label">Tipo (Nivel)</label>
                             <div class="col-md-6">
-                                <input type="radio" {{ ($usuario->tipo == 'admin') ? 'checked' : ''}} name="nivel" value="admin"> Administrador<br>
-                                <input type="radio"  {{ ($usuario->tipo == 'cliente') ? 'checked' : ''}} name="nivel" value="cliente"> Cliente<br>
+                                <input type="radio" {{ ($usuario->tipo == 'admin') ? 'checked' : ''}} name="tipo" value="admin"> Administrador<br>
+                                <input type="radio"  {{ ($usuario->tipo == 'cliente') ? 'checked' : ''}} name="tipo" value="cliente"> Cliente<br>
                             </div>
                         </div>
                         <div class="form-group">

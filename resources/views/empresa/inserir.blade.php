@@ -12,15 +12,15 @@
                         {{ csrf_field() }}
 
                         <div class="form-group">
-                            <label for="nomefantasia" class="col-md-4 control-label">Nome Fantasia</label>
+                            <label for="nome_fantasia" class="col-md-4 control-label">Nome Fantasia</label>
                             <div class="col-md-6">
-                                <input id="nomefantasia" type="text" class="form-control" name="nomefantasia" value="{{ old('nomefantasia') }}" required autofocus>
+                                <input id="nome_fantasia" type="text" class="form-control" name="nome_fantasia" value="{{ old('nomefantasia') }}" required autofocus>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="razaosocial" class="col-md-4 control-label">Razão Social</label>
+                            <label for="razao_social" class="col-md-4 control-label">Razão Social</label>
                             <div class="col-md-6">
-                                <input id="razaosocial" type="text" class="form-control" name="razaosocial" value="{{ old('razaosocial') }}" required autofocus>
+                                <input id="razao_social" type="text" class="form-control" name="razao_social" value="{{ old('razaosocial') }}" required autofocus>
                             </div>
                         </div>
                         <div class="form-group">
