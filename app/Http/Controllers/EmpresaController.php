@@ -67,7 +67,7 @@ class EmpresaController extends Controller
     		return redirect('/empresa');
     	}catch (Illuminate\Database\QueryException $e){
             return redirect('/empresa');
-    	}
+        }
     }
 
     public function carregar($id){ 
@@ -121,11 +121,5 @@ class EmpresaController extends Controller
     	$output = curl_exec($ch);
 
     	return $output;
-    }
-
-    public function verificarCnpj($cnpj){
-    	$cnpj = preg_replace( '/[^0-9]/', '', $cnpj);
-    	$retorno = Empresa::where('cnpj', $cnpj)->exists();
-    	return json_encode($retorno);
     }
 }
